@@ -17,15 +17,15 @@
 
 			while (bi.compareTo(B58.base) >= 0) {
 				var mod = bi.mod(B58.base);
-				chars.unshift(B58.alphabet[mod.intValue()]);
+				chars.unshift(B58.alphabet.charAt(mod.intValue()));
 				bi = bi.subtract(mod).divide(B58.base);
 			}
-			chars.unshift(B58.alphabet[bi.intValue()]);
+			chars.unshift(B58.alphabet.charAt(bi.intValue()));
 
 			// Convert leading zeros too.
 			for (var i = 0; i < input.length; i++) {
 				if (input[i] == 0x00) {
-					chars.unshift(B58.alphabet[0]);
+					chars.unshift(B58.alphabet.charAt(0));
 				} else break;
 			}
 
