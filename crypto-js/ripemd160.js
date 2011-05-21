@@ -13,6 +13,8 @@
  * Ported to Crypto-JS by Stefan Thomas.
  */
 
+Crypto = require('./crypto').Crypto;
+
 (function () {
 	// Shortcuts
 	var C = Crypto,
@@ -41,7 +43,7 @@
 	};
 
 	// Public API
-	var RIPEMD160 = C.RIPEMD160 = function (message, options) {
+	var RIPEMD160 = module.exports = function (message, options) {
 		var digestbytes = util.lWordsToBytes(RIPEMD160._rmd160(message));
 		return options && options.asBytes ? digestbytes :
 			options && options.asString ? Binary.bytesToString(digestbytes) :

@@ -9,7 +9,7 @@
 var base64map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 // Global Crypto object
-var Crypto = window.Crypto = {};
+var Crypto = exports.Crypto = {};
 
 // Crypto utilities
 var util = Crypto.util = {
@@ -156,5 +156,10 @@ var Binary = charenc.Binary = {
 	}
 
 };
+
+exports.wordsToBytes = Crypto.util.wordsToBytes;
+exports.base64_encode = Crypto.util.base64ToBytes;
+exports.hex_encode = Crypto.util.bytesToHex;
+exports.hex_decode = Crypto.util.hexToBytes;
 
 })();
