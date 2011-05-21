@@ -1,4 +1,16 @@
 
+
+isArray = Array.isArray or (o) ->
+  Object.prototype.toString.call(o) == '[object Array]'
+
+
+
+module.exports =
+  isArray: isArray
+
+
+###
+
 // Console ignore
 var names = ["log", "debug", "info", "warn", "error", "assert", "dir",
 			 "dirxml", "group", "groupEnd", "time", "timeEnd", "count",
@@ -57,3 +69,5 @@ Bitcoin.Util = {
 		return Crypto.RIPEMD160(Crypto.SHA256(data, {asBytes: true}), {asBytes: true});
 	}
 };
+
+###
