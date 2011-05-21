@@ -1,3 +1,4 @@
+
 function integerToBytes(i, len) {
 	var bytes = i.toByteArrayUnsigned();
 
@@ -131,7 +132,7 @@ function dmp(v) {
 	return Crypto.util.bytesToHex(v.toByteArrayUnsigned());
 };
 
-Bitcoin.ECDSA = (function () {
+var ECDSA = (function () {
 	var ecparams = getSECCurveByName("secp256k1");
 	var rng = new SecureRandom();
 

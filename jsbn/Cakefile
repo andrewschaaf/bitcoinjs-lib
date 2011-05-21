@@ -1,0 +1,9 @@
+
+{exec} = require 'child_process'
+
+
+task 'build', () ->
+  exec "cat _header.js jsbn.js jsbn2.js ec.js prng4.js rng.js sec.js _ecdsa.js _footer.js > combined.js", () ->
+    console.log "Done"
+
+
