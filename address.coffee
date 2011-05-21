@@ -24,7 +24,7 @@ address_to_hash160 = (string) ->
 
 
 hash160_to_address = (bytes) ->
-  hash = @hash.slice 0
+  hash = bytes.slice 0
   hash.unshift 0 # version
   checksum = hash256(hash).slice 0, 4
   bytes = hash.concat checksum
